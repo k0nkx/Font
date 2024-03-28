@@ -1,0 +1,36 @@
+-- Define a function that changes every single letter font to something else.
+-- @param text: The input text whose letters' font needs to be changed.
+-- @return: Returns the text with every letter's font changed.
+function changeFont(text)
+    local result = ""
+    local fontMap = {
+        a = "🇦​", b = "​🇧", c = "🇨", d = "​🇩", e = "​🇪",
+        f = "​🇫", g = "​🇬", h = "​🇭", i = "​🇮", j = "​🇯",
+        k = "​🇰", l = "​🇱", m = "​🇲", n = "​🇳", o = "​🇴",
+        p = "​🇵", q = "​🇶", r = "​🇷", s = "​🇸", t = "​🇹",
+        u = "​🇺", v = "​🇻", w = "​🇼", x = "​🇽", y = "​🇾", z = "​🇿",
+        A = "𝖠", B = "𝖡", C = "𝖢", D = "𝖣", E = "𝖤",
+        F = "𝖥", G = "𝖦", H = "𝖧", I = "𝖨", J = "𝖩",
+        K = "𝖪", L = "𝖫", M = "𝖬", N = "𝖭", O = "𝖮",
+        P = "𝖯", Q = "𝖰", R = "𝖱", S = "𝖲", T = "𝖳",
+        U = "𝖴", V = "𝖵", W = "𝖶", X = "𝖷", Y = "𝖸", Z = "𝖹"
+    }
+
+    for i = 1, #text do
+        local char = text:sub(i, i)
+        if fontMap[char] then
+            result = result .. fontMap[char]
+        else
+            result = result .. char
+        end
+    end
+
+    return result
+end
+
+-- Example usage of the changeFont function
+
+local originalText = "Hello, World!"
+local changedText = changeFont(originalText)
+print("Original Text:", originalText)
+print("Changed Text:", changedText)
